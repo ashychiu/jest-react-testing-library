@@ -37,7 +37,9 @@ test("button turns blue when clicked", () => {
 test("initial conditions of checkbox", () => {
   render(<App />);
   //check button is enabled
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   expect(colorButton).toBeEnabled();
 
   // checkbox is unchecked
