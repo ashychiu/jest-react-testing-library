@@ -21,7 +21,7 @@ function App() {
       <Grid item>
         <Button
           onClick={changeColor}
-          style={{ backgroundColor: buttonColor }}
+          style={{ backgroundColor: disableButton ? "gray" : buttonColor }}
           variant="contained"
           disabled={disableButton}
         >
@@ -29,8 +29,10 @@ function App() {
         </Button>
         <input
           type="checkbox"
+          id="disable-button-checkbox"
           onClick={() => setDisableButton(!disableButton)}
         />
+        <label htmlFor="disable-button-checkbox">Disable Button</label>
       </Grid>
     </Grid>
   );

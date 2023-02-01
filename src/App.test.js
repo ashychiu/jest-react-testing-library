@@ -43,7 +43,7 @@ test("initial conditions of checkbox", () => {
 
 test("button disabled when checkbox is clicked and button enabled when clicked again", () => {
   render(<App />);
-  const checkbox = screen.getByRole("checkbox");
+  const checkbox = screen.getByRole("checkbox", { name: "Disable Button" });
   const button = screen.getByRole("button");
   //click checkbox
   fireEvent.click(checkbox);
@@ -51,4 +51,16 @@ test("button disabled when checkbox is clicked and button enabled when clicked a
   //click the checkbox again
   fireEvent.click(checkbox);
   expect(button).not.toBeDisabled();
+});
+
+test("button turns grey when checkbox is clicked and not grey when clicked again", () => {
+  render(<App />);
+  const checkbox = screen.getByRole("checkbox", { name: "Disable Button" });
+  const button = screen.getByRole("button");
+  //click checkbox
+  fireEvent.click(checkbox);
+  expect(button).toHaveStyle({ "background-color": "gray" });
+  //click the checkbox again
+  fireEvent.click(checkbox);
+  expect(button).not.toHaveStyle({ "background-color": "gray" });
 });
