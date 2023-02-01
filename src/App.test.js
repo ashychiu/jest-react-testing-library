@@ -15,19 +15,23 @@ test("button has correct initial text & colour", () => {
   const { container } = render(<App />);
   logRoles(container); // show all the roles on the page in the console
 
-  const button = screen.getByRole("button", { name: "Change to blue" });
-  expect(button).toHaveStyle({ "background-color": "red" });
+  const button = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
+  expect(button).toHaveStyle({ "background-color": "MediumVioletRed" });
 });
 
 test("button turns blue when clicked", () => {
   render(<App />);
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
 
   //click button
   fireEvent.click(colorButton);
 
-  expect(colorButton).toHaveStyle({ "background-color": "blue" });
-  expect(colorButton).toHaveTextContent("Change to red");
+  expect(colorButton).toHaveStyle({ "background-color": "MidnightBlue" });
+  expect(colorButton).toHaveTextContent("Change to Medium Violet Red");
 });
 
 test("initial conditions of checkbox", () => {

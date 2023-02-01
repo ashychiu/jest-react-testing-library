@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import { Button, Grid } from "@mui/material";
+import { convertCamelWithSpaces } from "./AppLogic.ts";
 
 function App() {
-  const [buttonColor, setButtonColor] = useState("red");
+  const [buttonColor, setButtonColor] = useState("MediumVioletRed");
   const [disableButton, setDisableButton] = useState(false);
-  const newButtonColor = buttonColor === "red" ? "blue" : "red";
+  const newButtonColor =
+    buttonColor === "MediumVioletRed" ? "MidnightBlue" : "MediumVioletRed";
 
   const changeColor = () => {
     setButtonColor(newButtonColor);
@@ -25,7 +27,7 @@ function App() {
           variant="contained"
           disabled={disableButton}
         >
-          Change to {newButtonColor}
+          Change to {convertCamelWithSpaces(newButtonColor)}
         </Button>
         <input
           type="checkbox"
