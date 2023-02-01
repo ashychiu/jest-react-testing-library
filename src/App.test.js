@@ -59,8 +59,8 @@ test("button turns grey when checkbox is clicked and not grey when clicked again
   const button = screen.getByRole("button");
   //click checkbox
   fireEvent.click(checkbox);
-  expect(button).toHaveStyle({ "background-color": "gray" });
+  expect(button).toHaveStyle("background-color: gray");
   //click the checkbox again
   fireEvent.click(checkbox);
-  expect(button).not.toHaveStyle({ "background-color": "gray" });
+  expect(button).not.toHaveStyle("background-color: gray");
 });
