@@ -56,7 +56,7 @@ test("button disabled when checkbox is clicked and button enabled when clicked a
   expect(button).toBeDisabled();
   //click the checkbox again
   fireEvent.click(checkbox);
-  expect(button).not.toBeDisabled();
+  expect(button).toBeEnabled();
 });
 
 test("button turns grey when checkbox is clicked and not grey when clicked again", () => {
